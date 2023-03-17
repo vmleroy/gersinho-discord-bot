@@ -11,8 +11,8 @@ export const onReady = async (bot: Client) => {
     for (const Command of CommandList) {
       commandData.push(Command.data.toJSON());
     }
-
-    console.log(`[INFO] Loaded ${commandData.length} commands. \n   ${commandData.map((cmd) => cmd.name).join(", ")}`)
+    
+    console.log(`[INFO] Loading ${commandData.length} commands... \n   ${commandData.map((cmd) => cmd.name).join(", ")}`)
 
     await rest.put(
       Routes.applicationCommands(process.env.APPLICATION_ID as string),

@@ -8,7 +8,8 @@ import { SoundCloudPlugin } from "@distube/soundcloud";
 export const distube = new DisTube(BOT_CLIENT, {
   leaveOnStop: false,
   leaveOnFinish: false,
-  leaveOnEmpty: false,
+  leaveOnEmpty: true,
+  emptyCooldown: 600,
   nsfw: true,
   plugins: 
     [
