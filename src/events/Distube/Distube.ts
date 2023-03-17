@@ -49,7 +49,7 @@ export const distubeEvents = async (distube: DisTube) => {
       textChannel.send({ embeds: [embed] });
     })
     .on("error", async (textChannel, e) => {
-      console.error("[Error] An error ocurrer at distube", e);
+      console.error("[ERROR] An error ocurrer at distube", e);
       const embed = mError();
       embed.setDescription(`An error encountered: ${e.message.slice(0, 1979)}`);
       const channel = textChannel as TextChannel;
