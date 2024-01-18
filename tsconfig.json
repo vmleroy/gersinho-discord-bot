@@ -5,7 +5,9 @@
     "module": "ESNext",
     "moduleDetection": "auto",
     "baseUrl": "./src",
-    "rootDir": "./src",
+    "paths": {
+      "@/*": ["*"]
+    },
     
     /* Bundler mode */
     "moduleResolution": "bundler",

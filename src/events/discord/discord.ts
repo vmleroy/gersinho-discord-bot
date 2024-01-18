@@ -1,5 +1,5 @@
 import { Client, Events } from 'discord.js';	
-import { onInteraction, onReady } from './onEvents';	
+import { onInteraction, onReady } from '@/events/discord';	
 
 export const discordEvents = (bot: Client) => {	
   bot.once(Events.ClientReady, (c) => {	

@@ -1,14 +1,14 @@
 import fs from "fs";
 import path from "path";
 
-import { type ICommand } from "../interfaces";
+import { type ICommand } from "@/interfaces";
 
 const getCommands = () => {
   const dir: string = path.resolve();
+  console.log(dir)
   const list = [];
   const commandsPath = [
     path.join(dir, "./"),
-    path.join(dir, "./music/"),
   ];
 
   for (const cmdPath of commandsPath) {

@@ -1,2 +1,2 @@
-export * from "./onEvents/index.ts";
-export * from "./discord.ts";
+export * from "./discord";
+export * from "./onEvents"

@@ -1,1 +1,1 @@
-export * from './command-list.ts'
+export * from './command-list'

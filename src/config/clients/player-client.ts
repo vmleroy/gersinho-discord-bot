@@ -1,5 +1,5 @@
 import { Player } from 'discord-player';
-import { BOT_CLIENT } from './bot-client';
+import { BOT_CLIENT } from '@/config/clients';
 
 let client: Player | null = null
 

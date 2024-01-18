@@ -1,6 +1,6 @@
-import { BOT_CLIENT } from "./config";
-import { discordEvents } from "./events";
-import { validateEnv } from "./utils";
+import { BOT_CLIENT } from "@/config/clients";
+import { discordEvents } from "@/events/discord";
+import { validateEnv } from "@/utils";
 
 (async () => {
   if (!validateEnv()) return;
