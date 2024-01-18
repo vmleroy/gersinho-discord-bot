@@ -2,8 +2,9 @@
   "name": "gersinho-discord-bot-2",
   "module": "src/index.ts",
   "type": "module",
-  "devDependencies": {
-    "@types/bun": "latest"
+  "scripts": {
+    "start": "bun run src/index.ts",
+    "dev": "bun --watch run src/index.ts"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"

@@ -1,4 +1,4 @@
-import { Interaction } from "discord.js";
+import { type Interaction } from "discord.js";
 import { CommandList } from "../../../commands";
 
 const commandNotToDefer = ["ping", "server_info"];
