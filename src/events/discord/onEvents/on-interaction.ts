@@ -8,8 +8,6 @@ export const onInteraction = async (interaction: Interaction) => {
   
   for (const command of CommandList) {
     if (interaction.commandName === command.data.name) {
-      if (!commandNotToDefer.includes(command.data.name))
-        await interaction.deferReply();
       command.run(interaction);
     }
   }

@@ -1,6 +1,6 @@
 import chalk from "chalk";
 import { REST, Routes } from "discord.js";
-import { CommandList, getCommands } from "@/commands";
+import { getCommands } from "@/commands";
 
 export const getCommandFiles = () => {
   const { files } = getCommands();
@@ -8,6 +8,7 @@ export const getCommandFiles = () => {
 }
 
 export const FetchCommands = async () => {
+  const CommandList = getCommands().commands;
   const CommandListData = CommandList.map((cmd) => cmd.data.toJSON());
 
   console.log(`[${chalk.blue("INFO")}] Registering ${CommandListData.length} ${CommandListData.length > 1 ? "commands" : "command"}...`)
