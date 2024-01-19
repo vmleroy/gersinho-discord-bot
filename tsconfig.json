@@ -1,10 +1,15 @@
 {
   "compilerOptions": {
-    "lib": ["ESNext"],
+    "lib": ["ESNext", "ES2016"],
     "target": "ESNext",
+    
+    /* Module Resolution */
     "module": "ESNext",
     "moduleDetection": "auto",
+    "resolveJsonModule": true,
     "baseUrl": "./src",
+    "rootDir": "./src",
+    "outDir": "./dist",
     "paths": {
       "@/*": ["*"]
     },
@@ -14,6 +19,9 @@
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
     "noEmit": true,
+
+    /* Interop Constraints */
+    "esModuleInterop": true,
 
     /* Linting */
     "skipLibCheck": true,

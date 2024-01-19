@@ -1,39 +1,39 @@
 import fs from "fs";
-import path from "path";
-
+import chalk from "chalk";
 import { type Command } from "@/interfaces";
 
-const getCommands = () => {
-  const list = [];
-  const commandsPath = [
-    path.join(__dirname, "./"),
-  ];
+const commandsPath = ["dev", "music"];
 
+let CommandList: Command[] = [];
+
+export const getCommands = () => {
+  const list: Command[] = [];
+
+  let files: any = []
   for (const commandPath of commandsPath) {
-    const commandFiles = fs
-      .readdirSync(commandPath)
-      .filter(
-        (file) =>
-          file.endsWith(".ts") &&
-          file !== "command-list.ts" &&
-          file !== "index.ts"
-      );
-    console.log(commandFiles)
+    const path = `${__dirname.replaceAll("\\", "/")}/${commandPath}/`;
+    const commandFiles = fs.readdirSync(path).filter((file) =>
+      file.endsWith(".ts") &&
+      !file.startsWith("command-list") &&
+      !file.startsWith("index"));
     for (const file of commandFiles) {
-      console.log(`${commandPath}${file}`)
-      const command = require(`${commandPath}${file}`).default;
-      console.log(command)
-      // if ("data" in command && "run" in command) {
-      //   list.push(command);
-      // } else {
-      //   console.log(
-      //     `[WARNING] Command ${file} is not valid! Is missing "data" or "run" property.`
-      //   );
-      // }
+      files.push({ name: file, path: path })
     }
   }
 
-  return [];
+  console.log(`[${chalk.blue("INFO")}] Searching for ${files.length} ${files.length > 1 ? "commands" : "command"}...`)
+
+  for (const file of files) {
+    const command = require(`${file.path}${file.name}`).default;
+    if ("data" in command && "run" in command) {
+      list.push(command);
+    } else {
+      console.log(`\t[${chalk.yellow("WARNING")}] Command ${file.name} is not valid! Is missing "data" or "run" property.`);
+    }
+  }
+
+  CommandList = list;
+  return {commands: list, files: files};
 };
 
-export const CommandList: Command[] = getCommands();
+export { CommandList }
