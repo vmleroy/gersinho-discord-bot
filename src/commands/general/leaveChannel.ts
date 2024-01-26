@@ -3,9 +3,9 @@ import {
   SlashCommandBuilder,
   TextChannel,
 } from "discord.js";
-import { ICommand } from "../interfaces";
+import { ICommand } from "../../interfaces";
 
-import { distube } from "../config";
+import { distube } from "../../config";
 import { GuildIdResolvable } from "distube";
 
 export const LeaveChannel: ICommand = {

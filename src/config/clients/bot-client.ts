@@ -1,4 +1,6 @@
-import { Client, GatewayIntentBits, IntentsBitField } from "discord.js";
+import { Client, IntentsBitField } from 'discord.js';
+
+let client: Client | null = null
 
 const intents = new IntentsBitField();
 intents.add(
@@ -10,6 +12,11 @@ intents.add(
   IntentsBitField.Flags.MessageContent
 );
 
-export const BOT_CLIENT = new Client({
-  intents: intents,
-});
+export const BOT_CLIENT: Client = (() => {
+  if (!client) {
+    client = new Client({
+      intents: intents,
+    })
+  }
+  return client
+})()

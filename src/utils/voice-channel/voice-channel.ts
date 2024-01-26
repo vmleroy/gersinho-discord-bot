@@ -1,6 +1,6 @@
-import { CommandInteraction, VoiceBasedChannel } from "discord.js";
+import { CommandInteraction, type VoiceBasedChannel } from "discord.js";
 
-export const getVoiceChannel = (interaction: CommandInteraction) => { 
+export const userVoiceChannel = (interaction: CommandInteraction) => { 
     const voiceState = interaction.guild?.voiceStates.cache.get(interaction.user.id);
     const voiceChannel = voiceState?.channel as VoiceBasedChannel;
     return voiceChannel;

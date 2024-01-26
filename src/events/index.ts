@@ -1,2 +1,2 @@
-export * from './Discord'
-export * from './onEvent'
+export * from './discord'
+export * from './distube'

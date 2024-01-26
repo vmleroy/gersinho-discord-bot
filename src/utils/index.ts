@@ -1,3 +1,1 @@
-export * from './validateEnv'
-export * from './voiceChannel'
-export * from './music'
+export * from './validate-env.ts'

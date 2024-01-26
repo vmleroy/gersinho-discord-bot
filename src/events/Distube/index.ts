@@ -1,1 +1,1 @@
-export * from './Distube'
+export * from './distube'

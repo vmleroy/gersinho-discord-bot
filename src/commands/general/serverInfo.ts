@@ -1,6 +1,6 @@
 import { CommandInteraction, SlashCommandBuilder } from "discord.js";
-import { mAction } from "../embeds/Message";
-import { ICommand } from "../interfaces";
+import { mAction } from "../../embeds/Message";
+import { ICommand } from "../../interfaces";
 
 const ServerInfo: ICommand = {
   data: new SlashCommandBuilder()

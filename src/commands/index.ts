@@ -1,1 +1,1 @@
-export * from './_CommandList'
+export * from './command-list'

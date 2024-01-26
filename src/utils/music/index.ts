@@ -1,2 +1,1 @@
-export * from './checkIfCanUseMusicCommands'
-export * from './getQueue'
+export * from "./can-play-music";
