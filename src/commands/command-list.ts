@@ -4,9 +4,12 @@ import { type Command } from "@/interfaces";
 
 const commandsPath = ["dev", "music", "general"];
 
-let CommandList: Command[] = [];
+let CommandList: Command[] | null = null;
+let Files: any = null
 
 export const getCommands = () => {
+  if (!!CommandList && !!Files) return {commands: CommandList, files: Files};
+
   const list: Command[] = [];
 
   let files: any = []
@@ -33,7 +36,6 @@ export const getCommands = () => {
   }
 
   CommandList = list;
+  Files = files;
   return {commands: list, files: files};
 };
-
-export { CommandList }

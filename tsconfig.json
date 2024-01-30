@@ -14,7 +14,7 @@
       "@/*": ["*"]
     },
     
-    /* Bundler mode */
+    /* Bundler mode s*/
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,

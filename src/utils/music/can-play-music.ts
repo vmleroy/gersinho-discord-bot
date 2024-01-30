@@ -1,5 +1,5 @@
 import type { CommandInteraction } from "discord.js";
-import { botVoiceChannel, userVoiceChannel } from "@/utils/voice-channel/voice-channel";
+import { botVoiceChannel, userVoiceChannel } from "@/utils/voice-channel";
 
 export const canPlayMusic = async (interaction: CommandInteraction) => {
 

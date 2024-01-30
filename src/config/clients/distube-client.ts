@@ -1,6 +1,3 @@
-import fs from "fs";
-import dotenv from 'dotenv'
-
 import { DisTube } from "distube";
 import { YtDlpPlugin } from "@distube/yt-dlp";
 import { SpotifyPlugin } from "@distube/spotify";

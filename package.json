@@ -26,6 +26,7 @@
     "distube": "^4.1.1",
     "dotenv": "^16.3.1",
     "ffmpeg-static": "^5.2.0",
+    "is-url-http": "^2.3.7",
     "libsodium-wrappers": "^0.7.13"
   },
   "devDependencies": {

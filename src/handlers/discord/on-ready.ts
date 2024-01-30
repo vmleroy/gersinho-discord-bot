@@ -9,9 +9,8 @@ export const onReady = async (client: Client) => {
 
   try {
     await FetchCommands();
-    console.log(`[${chalk.green("SUCCESS")}]Successfully registered application commands.`);    
+    console.log(`[${chalk.green("SUCCESS")}] Successfully registered application commands.`);    
   } catch (error) {
-    console.log(`${chalk.red("Failed to register application commands.")}`);
     console.error(error);
   }
 
@@ -21,7 +20,7 @@ export const onReady = async (client: Client) => {
       distube.options.youtubeCookie = JSON.parse(process.env.YOUTUBE_COOKIE as string);
       console.log(`[${chalk.green("SUCCESS")}] Successfully added youtube cookies.`)
     } catch (error) {
-      console.log(`${chalk.red("Failed to parse YouTube cookie.")}`);
+      console.log(`[${chalk.red("ERROR")}] Failed to parse YouTube cookie. Please check your .env file (YOUTUBE_COOKIE) or check the documentation (distube)`);
       console.error(error);
     }
   }
