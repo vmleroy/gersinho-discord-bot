@@ -1,3 +1,54 @@
+# Node.js dependencies
 node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Environment variables
 .env
-.yarn
+.env.*
+!.env.example
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# VSCode settings
+.vscode/
+
+# Optional npm cache directory
+.npm/
+
+# Build output
+dist/
+build/
+out/
+
+# Coverage directory
+coverage/
+
+# PM2 logs and pids
+pids/
+*.pid
+*.seed
+
+# Discord bot specific
+auth.json
+config.json
+credentials.json
+
+# Misc
+*.tgz
+.idea/
+*.sublime-workspace
+*.sublime-project
+*.swp
+*.swo
