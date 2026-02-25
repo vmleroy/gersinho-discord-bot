@@ -1,5 +1,4 @@
 import { Client, Events } from 'discord.js';
-import { config } from '..';
 
 export const setupClientEvents = (client: Client) => {
   client.once(Events.ClientReady, () => {
@@ -17,6 +16,14 @@ export const setupClientEvents = (client: Client) => {
     }
 
     try {
+      if (command.onlyAnswerInGuild && !interaction.guild) {
+        await interaction.reply({
+          content: 'This command can only be used in a server.',
+          ephemeral: true,
+        });
+        return;
+      }
+
       await command.execute(interaction);
     } catch (error) {
       console.error(`[EVENTS] ❌ | Error executing command ${interaction.commandName}:`, error);

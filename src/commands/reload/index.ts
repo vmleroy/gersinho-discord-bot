@@ -4,6 +4,7 @@ import { ICommand } from '@/interfaces/command';
 
 export const ReloadCommand: ICommand = {
   type: 'private',
+  onlyAnswerInGuild: false,
 
   data: new SlashCommandBuilder()
     .setName('reload_all')

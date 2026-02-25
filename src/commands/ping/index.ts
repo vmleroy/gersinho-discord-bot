@@ -3,6 +3,7 @@ import { SlashCommandBuilder } from 'discord.js';
 
 export const PingCommand: ICommand = {
   type: 'private',
+  onlyAnswerInGuild: false,
 
   data: new SlashCommandBuilder().setName('ping').setDescription('Answer with Pong!'),
 

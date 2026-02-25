@@ -2,7 +2,7 @@ import { Client, GatewayIntentBits } from 'discord.js';
 import { config } from '@/config';
 import { Intents } from '@/config/intents';
 import { deployCommands, setupCommands } from '@/config/slash-commands';
-import { setupClientEvents } from './config/events';
+import { setupClientEvents } from '@/events';
 
 async function startBot() {
   console.log('------------------------------');

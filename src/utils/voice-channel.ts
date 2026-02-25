@@ -53,9 +53,7 @@ export const leaveVoiceChannel = (guild: Guild): VoiceChannel | null => {
   const botVoiceChannel = getBotVoiceChannel(guild);
   if (botVoiceChannel) {
     const connection = getVoiceConnection(guild.id);
-    if (connection) {
-      connection.destroy();
-    }
+    connection?.destroy();
   }
   return botVoiceChannel;
 };
