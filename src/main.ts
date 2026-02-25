@@ -5,8 +5,10 @@ import { deployCommands, setupCommands } from '@/config/slash-commands';
 import { setupClientEvents } from './config/events';
 
 async function startBot() {
+  console.log('------------------------------');
+  console.log('[BOT] | Starting bot...');
   const client = new Client({ intents: Intents });
-  
+
   await deployCommands();
   setupCommands(client);
   setupClientEvents(client);

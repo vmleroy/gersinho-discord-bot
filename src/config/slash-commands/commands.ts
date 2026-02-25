@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { Routes, Client, Collection } from 'discord.js';
+import { Routes, Client, Collection, ApplicationCommand } from 'discord.js';
 import { Rest } from '@/config/rest';
 import { config } from '@/config';
 import { ICommand } from '@/interfaces/command';
@@ -50,16 +50,20 @@ export const deployCommands = async () => {
     const commands = getCommands();
 
     if (config.isDevelopment) {
-      await Rest.put(Routes.applicationGuildCommands(config.clientId, config.guildId), {
+      await Rest.put(Routes.applicationGuildCommands(config.clientId, config.developmentGuildId), {
         body: Array.from(commands.values()).map((command) => command.data.toJSON()),
       });
       console.log('\t✅ | Commands registered only for the development guild!');
-    } else {
-      await Rest.put(Routes.applicationCommands(config.clientId), {
-        body: Array.from(commands.values()).map((command) => command.data.toJSON()),
-      });
-      console.log('\t✅ | Commands registered globally!');
+      return;
     }
+
+    const publicCommands = Array.from(commands.values()).filter(
+      (command) => command.type === 'public',
+    );
+    await Rest.put(Routes.applicationCommands(config.clientId), {
+      body: publicCommands.map((command) => command.data.toJSON()),
+    });
+    console.log('\t✅ | Commands registered globally!');
   } catch (error) {
     console.error('\t❌ | Error while registering commands:', error);
   }

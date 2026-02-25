@@ -15,7 +15,7 @@ export const clearApplicationCommands = async () => {
 export const clearGuildCommands = async () => {
   console.log('[COMMANDS] | Clearing guild commands...');
   try {
-    await Rest.put(Routes.applicationGuildCommands(config.clientId, config.guildId), { body: [] });
+    await Rest.put(Routes.applicationGuildCommands(config.clientId, config.developmentGuildId), { body: [] });
     console.log('\t✅ | Guild commands removed successfully!');
   } catch (error) {
     console.error('\t❌ | Error while clearing guild commands:', error);
